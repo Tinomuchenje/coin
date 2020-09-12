@@ -8,19 +8,28 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './app-routing.module';
 
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 @NgModule({
-  declarations: [	AppComponent,
+  declarations: [			AppComponent,
+      LoginComponent,
+      CreateAccountComponent
    ],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    RouterModule.forRoot(routes),
     NgxDatatableModule,
+    FormsModule,
     HttpClientModule],
   providers: [
     StatusBar,
