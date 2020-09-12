@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-tab3',
@@ -7,45 +6,12 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  constructor(private formBuilder: FormBuilder) { }
-  accountDetailsForm = this.formBuilder.group({
-    name: [''],
-    bank: [''],
-    accountNumber: [''],
-    branchCode: [''],
-    phoneNumber: [''],
-    email: ['']
-  });
+  accountDetailsForm: any;
+  details: any = {};
 
-  get name(){
-    return this.accountDetailsForm.get('name');
-  }
-
-  get bank(){
-    return this.accountDetailsForm.get('bank');
-  }
-
-  get accountNumber() {
-    return this.accountDetailsForm.get('accountNumber');
-  }
-
-  get branchCode(){
-    return this.accountDetailsForm.get('branchCode');
-  }
-  get phoneNumber(){
-    return this.accountDetailsForm.get('phoneNumber');
-  }
-  get email() {
-    return this.accountDetailsForm.get('email');
-  }
-
-  public errorMessages = {
-    name: [
-      { type: 'required', message: 'Name is required'}
-    ],
-  };
+  constructor() { }
 
   save(){
-    console.log(this.accountDetailsForm);
+    console.log(this.details);
   }
 }
