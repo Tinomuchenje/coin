@@ -13,66 +13,22 @@
     </ion-toolbar>
   </ion-header>
 
-  <section class="ion-text-center">
+
+<section class="ion-text-center">
     <h3>Welcome,
       Tino</h3>
   </section>
-
-  <ion-grid>
-    <ion-card class="card">
-      <ion-card-header>
-        <ion-card-title class="ion-text-center">Silver Coins</ion-card-title>
-      </ion-card-header>
-
-      <ion-card-content>
-        <ion-row>
-          <ion-col col-6>
-            <img src="assets/silver.png" />
-          </ion-col>
-          <ion-col col-6>
-            <p><b>Price:</b> R 500</p>
-            <p><b>Time:</b> 24 hrs</p>
-            <p><b>Interest:</b> 25 %</p>
-          </ion-col>
-        </ion-row>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card class="card">
-      <ion-card-header>
-        <ion-card-title class="ion-text-center">Gold Coins</ion-card-title>
-      </ion-card-header>
-
-      <ion-card-content>
-        <ion-row>
-          <ion-col col-6>
-            <img src="assets/gold.png" />
-          </ion-col>
-          <ion-col col-6>
-            <p><b>Price:</b> R1 000</p>
-            <p><b>Time:</b> 12 hrs</p>
-            <p><b>Interest:</b> 30 %</p>
-          </ion-col>
-        </ion-row>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card class="card">
-      <ion-card-header>
-        <ion-card-title class="ion-text-center">Platinum Coins</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-row>
-          <ion-col col-6>
-            <img class="coin" src="assets/platinum.png" />
-          </ion-col>
-          <ion-col col-6>
-            <p><b>Price:</b> R2 500</p>
-            <p><b>Time:</b> 6 hrs</p>
-            <p><b>Interest:</b> 50 %</p>
-          </ion-col>
-        </ion-row>
-      </ion-card-content>
-    </ion-card>
-  </ion-grid>
+  <ngx-datatable class="bootstrap" [sortType]="'multi'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50"
+                 [rows]="rows" [columns]="columns" [columnMode]="'force'" [limit]="10">
+    <ngx-datatable-column name="name"></ngx-datatable-column>
+    <ngx-datatable-column name="price"></ngx-datatable-column>
+    <ngx-datatable-column name="bank"></ngx-datatable-column>
+    <ngx-datatable-column name="time"></ngx-datatable-column>
+    <ngx-datatable-column name="Actions" [sortable]="false">
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <ion-button size="small" fill="outline" (click)="open(row)">Buy</ion-button>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+  
 </ion-content>

@@ -1,0 +1,25 @@
+{
+	"coins": [
+		{
+			"id":"1",
+			"name": "Silver",
+			"price": "R500",
+			"bank": "FNB",
+			"time": "2"
+		},
+		{
+			"id":"2",
+			"name": "Gold",
+			"price": "R1000",
+			"bank": "NMB",
+			"time": "2"
+		},
+		{
+			"id":"3",
+			"name": "Platnum",
+			"price": "R2500",
+			"bank": "CBZ",
+			"time": "2"
+		}
+	]
+}
