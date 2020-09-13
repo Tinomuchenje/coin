@@ -13,13 +13,11 @@ import { routes } from './app-routing.module';
 
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CreateAccountComponent } from './create-account/create-account.component';
 
 @NgModule({
-  declarations: [			AppComponent,
-      LoginComponent,
+  declarations: [	AppComponent,
       CreateAccountComponent
    ],
   entryComponents: [],

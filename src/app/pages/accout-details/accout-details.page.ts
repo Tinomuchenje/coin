@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accout-details.page.scss'],
 })
 export class AccoutDetailsPage implements OnInit {
-
+  details: any = {};
   constructor() { }
 
   ngOnInit() {
+  }
+ 
+  save() {
+    console.log(this.details);
   }
 
 }

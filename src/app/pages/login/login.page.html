@@ -1,9 +1,28 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <br>
+  <ion-img src="assets/gold.png"></ion-img>
+  <form (ngSubmit)="login()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Email Address</ion-label>
+        <ion-input name="emailAddress" [(ngModel)]="user.emailAddress" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input name="password" [(ngModel)]="user.password" type="password"></ion-input>
+      </ion-item>
+      <ion-item lines='none'>
+        <a routerLink='/signup'>Create Account</a>
+      </ion-item>
+    </ion-list>
+<br>
+<br>
+    <ion-button type="submit" routerLink="/application" expand="block">Login</ion-button>
+  </form>
 </ion-content>
