@@ -3,10 +3,13 @@ import { LoginComponent } from '../app/login/login.component';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent },
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./index/index.module').then(m => m.IndexPageModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   }
 ];
 @NgModule({
