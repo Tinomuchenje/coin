@@ -28,6 +28,11 @@ const routes: Routes = [
           )
       }
     ]
+  },
+  {
+    path: '',
+    redirectTo: '/home/dashboard',
+    pathMatch: 'full'
   }
 ];
 

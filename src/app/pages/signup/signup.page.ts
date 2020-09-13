@@ -14,6 +14,6 @@ export class SignupPage implements OnInit {
   }
   login() {
     console.log(this.user);
-    this.router.navigate(['./ap']);
+    this.router.navigate(['/home/dashboard']);
   }
 }
