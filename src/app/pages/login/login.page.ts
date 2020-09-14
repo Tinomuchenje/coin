@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { AuthenticationService } from '../../services/authentication-service';
 
 @Component({
   selector: 'app-login',
@@ -9,22 +10,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginPage implements OnInit {
 
-  user = {
-    phone_number: '',
-    password: ''
-  };
-
-  url = 'http://thecoinbase.co.za/api/login.php';
-
-  constructor(private router: Router, private http: HttpClient ) { }
+  user: any = {};
+  constructor(private router: Router, public authService: AuthenticationService, ) { }
 
   ngOnInit() {
   }
-  login() {
-    this.http.post(this.url, this.user).toPromise().then(data => {
-      console.log(data);
-      console.log(this.user);
-      this.router.navigate(['home']);
-    });
+
+  logIn(email, password) {
+    this.authService.SignIn(email, password)
+      .then((res) => {
+        if (this.authService.isEmailVerified) {
+          this.router.navigate(['/home/dashboard']);
+        } else {
+          window.alert('Email is not verified');
+          return false;
+        }
+      }).catch((error) => {
+        window.alert(error.message);
+      });
   }
 }

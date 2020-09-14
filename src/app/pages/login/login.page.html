@@ -7,11 +7,11 @@
 <ion-content>
   <br>
   <ion-img src="assets/gold.png"></ion-img>
-  <form (ngSubmit)="login()">
+  <form (ngSubmit)="logIn(user.email, user.password)">
     <ion-list>
       <ion-item>
-        <ion-label position="floating">Phone Number</ion-label>
-        <ion-input name="phoneNumber" [(ngModel)]="user.phone_number" type="tel"></ion-input>
+        <ion-label position="floating">Email Address</ion-label>
+        <ion-input name="emailAddress" [(ngModel)]="user.email" type="email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Password</ion-label>

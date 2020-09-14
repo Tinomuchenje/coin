@@ -24,6 +24,11 @@ const routes: Routes = [
         path: 'signup',
         loadChildren: () =>
           import('../pages/signup/signup.module').then(m => m.SignupPageModule)
+      },
+      {
+        path: 'verify-email',
+        loadChildren: () =>
+          import('../pages/verify-email/verify-email.module').then(m => m.VerifyEmailPageModule)
       }
     ]
   }

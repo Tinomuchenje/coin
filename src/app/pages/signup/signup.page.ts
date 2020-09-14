@@ -17,8 +17,8 @@ export class SignupPage implements OnInit {
   signUp(email, password) {
     this.authService.RegisterUser(email, password)
       .then((res) => {
-        this.router.navigate(['/home/dashboard']);
-        console.log(res);
+        this.authService.SendVerificationMail()
+        this.router.navigate(['verify-email']);
       }).catch((error) => {
         window.alert(error.message);
       });

@@ -20,12 +20,9 @@ import { environment } from '../environments/environment';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { CreateAccountComponent } from './create-account/create-account.component';
 
 @NgModule({
-  declarations: [	AppComponent,
-      CreateAccountComponent
-   ],
+  declarations: [	AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
