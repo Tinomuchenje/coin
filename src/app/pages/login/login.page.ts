@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +9,22 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  user: any = {};
-  constructor(private router: Router ) { }
+  user = {
+    phone_number: '',
+    password: ''
+  };
+
+  url = 'http://thecoinbase.co.za/api/login.php';
+
+  constructor(private router: Router, private http: HttpClient ) { }
 
   ngOnInit() {
   }
   login() {
-    console.log(this.user);
-    this.router.navigate(['home']);
+    this.http.post(this.url, this.user).toPromise().then(data => {
+      console.log(data);
+      console.log(this.user);
+      this.router.navigate(['home']);
+    });
   }
 }
